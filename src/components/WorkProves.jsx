@@ -47,7 +47,7 @@ const WorkProves = () => {
 
   return (
     <div ref={ref} className="container mx-auto mt-20 p-8 rounded-lg flex flex-col justify-center text-center shadow-lg max-w-2xl">
-      <h2 className="text-4xl font-bold mb-6 text-center">
+      <h2 className="text-4xl text-orange-500 font-bold mb-6 text-center">
         My Work Experience
       </h2>
 
