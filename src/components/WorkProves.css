@@ -1,0 +1,6 @@
+/* WorkProves.css */
+.animate-left {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }

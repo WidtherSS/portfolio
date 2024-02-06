@@ -45,8 +45,8 @@ const Portfolio = () => {
       link: '',
       repo: ''
     }
-
   ];
+  
 
   return (
     <div

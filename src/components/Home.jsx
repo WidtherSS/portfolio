@@ -5,10 +5,7 @@ import { Link } from "react-scroll";
 
 const Home = () => {
   return (
-    <div
-      name="home"
-      className="h-screen w-full home"
-    >
+    <div name="home" className="h-screen w-full home">
       <div className="max-w-screen-lg mx-auto flex flex-col items-center justify-center h-full px-4 md:flex-row">
         <div className="small-screen hidden">
           <img
@@ -21,11 +18,11 @@ const Home = () => {
           <h2 className="text-4xl sm:text-7xl font-bold text-white">
             I'm a Front-end Developer
           </h2>
-          <p className="text-gray-500 py-4 max-w-md">
-            I possess two years of dedicated study in web development and
-            software design. My expertise primarily revolves around crafting
-            dynamic web applications, employing cutting-edge technologies such
-            as React and Tailwind.
+          <p className="text-gray-400 py-4 max-w-md">
+            With three years of combined experience, including two years of
+            focused study in web development and software design, along with one
+            year of successful freelancing. My expertise centers on crafting
+            dynamic web applications, leveraging state-of-the-art technologies
           </p>
 
           <div className="portfolio-btn">

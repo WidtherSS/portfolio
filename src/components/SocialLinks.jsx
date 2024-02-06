@@ -31,19 +31,8 @@ const SocialLinks = () => {
           Email <HiOutlineMail size={30} />
         </>
       ),
-      href: "mailto:adamchatila2020@gmail.com",
-    },
-
-    {
-      id: 5,
-      child: (
-        <>
-          Instagram <FaInstagram size={30} />
-        </>
-      ),
-      href: "https://www.instagram.com/adam_fmibha/",
-      style: "rounded-br-md",
-    },
+      href: "mailto:adamchatiladev@gmail.com",
+    }
   ];
 
   return (

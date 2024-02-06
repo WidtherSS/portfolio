@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+{/*import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 //function for form reset
 function handleSubmit(e){
@@ -72,4 +72,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default Contact; */}
