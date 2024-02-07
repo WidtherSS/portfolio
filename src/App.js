@@ -1,5 +1,5 @@
+// App.js
 import React from "react";
-import { useInView } from "react-intersection-observer";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import WorkProves from "./components/WorkProves";
@@ -9,38 +9,25 @@ import Footer from "./components/Footer";
 import SocialLinks from "./components/SocialLinks";
 
 function App() {
-  // Destructure the second element (inView) if it's not used
-  const [homeRef,] = useInView({
-    triggerOnce: true,
-  });
-
-  const [workProvesRef,] = useInView({
-    triggerOnce: true,
-  });
-
-  const [portfolioRef,] = useInView({
-    triggerOnce: true,
-  });
-
-  const [experienceRef,] = useInView({
-    triggerOnce: true,
-  });
+  const handleTechnologiesClick = () => {
+    // Scroll to the "Experience" section
+    const experienceSection = document.getElementById("experience");
+    if (experienceSection) {
+      window.scrollTo({
+        top: experienceSection.offsetTop,
+        behavior: "smooth",
+      });
+    }
+  };
 
   return (
     <div>
-      <NavBar />
-      <div ref={homeRef}>
-        <Home />
-      </div>
-      <div ref={workProvesRef}>
-        <WorkProves />
-      </div>
-      <div ref={portfolioRef}>
-        <Portfolio />
-      </div>
-      <div ref={experienceRef}>
-        <Experience />
-      </div>
+      <NavBar onTechnologiesClick={handleTechnologiesClick} />
+
+      <Home />
+      <WorkProves />
+      <Portfolio />
+      <Experience />
       <Footer />
       <SocialLinks />
     </div>

@@ -1,9 +1,24 @@
-import React, { useState } from "react";
+// NavBar.js
+import React, { useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { Link } from "react-scroll";
+import { Link as ScrollLink } from "react-scroll";
 
-const NavBar = () => {
+const NavBar = ({ onTechnologiesClick }) => {
   const [nav, setNav] = useState(false);
+  const [experienceVisible, setExperienceVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const experienceSection = document.getElementById("experience");
+      if (experienceSection) {
+        const { top } = experienceSection.getBoundingClientRect();
+        setExperienceVisible(top <= window.innerHeight);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const links = [
     {
@@ -11,25 +26,25 @@ const NavBar = () => {
       link: "home",
     },
     {
-      id: 2,
-      link: "about",
+      id: 4,
+      link: "experience",
     },
     {
       id: 3,
       link: "portfolio",
     },
     {
-      id: 4,
-      link: "experience",
-    },
-    {
-      id: 5,
-      link: "contact",
+      id: 2,
+      link: "technologies",
     },
   ];
 
   return (
-    <div className="flex justify-between items-center w-full h-20 px-4 text-white bg-gradient-to-b from-blue-900 to-blue-800 fixed nav">
+    <div
+      className={`flex justify-between items-center w-full h-20 px-4 text-white fixed z-50 transition-colors ${
+        experienceVisible ? "bg-gradient-to-b from-blue-900 to-blue-800" : "bg-transparent"
+      }`}
+    >
       <div>
         <h1 className="text-5xl font-signature ml-2">Adam</h1>
       </div>
@@ -40,9 +55,9 @@ const NavBar = () => {
             key={id}
             className="nav-links px-4 cursor-pointer capitalize font-medium text-white-300 hover:scale-105 hover:text-white duration-200 link-underline"
           >
-            <Link to={link} smooth duration={500}>
+            <ScrollLink to={link} smooth duration={500}>
               {link}
-            </Link>
+            </ScrollLink>
           </li>
         ))}
       </ul>
@@ -61,14 +76,18 @@ const NavBar = () => {
               key={id}
               className="px-4 cursor-pointer capitalize py-6 text-4xl"
             >
-              <Link
-                onClick={() => setNav(!nav)}
-                to={link}
-                smooth
-                duration={500}
-              >
-                {link}
-              </Link>
+              {link === "technologies" ? (
+                <span onClick={onTechnologiesClick}>{link}</span>
+              ) : (
+                <ScrollLink
+                  onClick={() => setNav(false)}
+                  to={link}
+                  smooth
+                  duration={500}
+                >
+                  {link}
+                </ScrollLink>
+              )}
             </li>
           ))}
         </ul>

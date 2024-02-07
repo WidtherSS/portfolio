@@ -10,7 +10,7 @@ const Home = () => {
         <div className="max-w-screen-lg mx-auto px-4">
           <div className="pl-[80px]">
             <h2 className="text-4xl sm:text-7xl font-bold text-white">
-              I'm a <span className="text-orange-500">Front-end</span> Developer
+              I'm a <span className="text-[#18d49c]">Front-end</span> Developer
             </h2>
             <p className="text-gray-400 py-4 max-w-md">
               With three years of combined experience, including two years of

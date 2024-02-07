@@ -131,10 +131,10 @@ const Experience = () => {
   });
 
   return (
-    <div ref={ref} name="experience" className="w-full h-screen experience">
+    <div  ref={ref} id="experience" className="w-full h-screen experience">
       <div className="max-w-screen-lg mx-auto p-4 flex flex-col justify-center w-full h-full text-white">
         <div>
-          <p className="text-4xl font-bold text-orange-500 ">
+          <p className="text-4xl font-bold text-[#18d49c] ">
             Experience
           </p>
           <p className="py-6">
